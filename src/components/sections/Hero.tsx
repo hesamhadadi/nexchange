@@ -19,7 +19,11 @@ export default function Hero() {
   const eth = data.find(c => c.id === 'ethereum');
 
   return (
-    <section id="home" className="relative min-h-[calc(100vh-44px)] scroll-mt-32 sm:scroll-mt-36 flex flex-col justify-center mesh-bg overflow-hidden">
+    <section
+      id="home"
+      className="relative scroll-mt-32 sm:scroll-mt-36 flex flex-col justify-center mesh-bg overflow-hidden"
+      style={{ minHeight: 'calc(100vh - var(--ticker-height))' }}
+    >
       {/* Decorative blobs */}
       <div
         className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 pointer-events-none"

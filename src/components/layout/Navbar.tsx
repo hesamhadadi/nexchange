@@ -111,8 +111,8 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[68px] inset-x-0 z-40 glass border-b"
-            style={{ borderColor: 'var(--border)' }}
+            className="fixed inset-x-0 z-40 glass border-b"
+            style={{ borderColor: 'var(--border)', top: 'var(--navbar-height)' }}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-3">
               {links.map(l => (

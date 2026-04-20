@@ -23,6 +23,8 @@
   --text-primary: #f0f0ff;
   --text-secondary: rgba(240,240,255,0.55);
   --text-muted: rgba(240,240,255,0.3);
+  --navbar-height: 68px;
+  --ticker-height: 44px;
   --font-display: 'Playfair Display',Georgia,serif;
   --font-body: 'DM Sans',sans-serif;
   --font-mono: 'Space Mono',monospace;

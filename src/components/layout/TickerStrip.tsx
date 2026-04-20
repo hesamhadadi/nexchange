@@ -18,11 +18,12 @@ export default function TickerStrip() {
 
   return (
       <div
-        className="relative overflow-hidden h-11 z-40"
+        className="relative overflow-hidden z-40"
         style={{
           background: 'var(--bg-deep)',
           borderBottom: '1px solid var(--border)',
-          marginTop: '68px',
+          marginTop: 'var(--navbar-height)',
+          height: 'var(--ticker-height)',
         }}
       >
       {/* Live badge */}
