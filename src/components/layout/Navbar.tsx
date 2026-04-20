@@ -6,7 +6,7 @@ import { Menu, X, Globe, TrendingUp } from 'lucide-react';
 import { useLang } from '@/context/LanguageContext';
 
 export default function Navbar() {
-  const { lang, setLang, t, dir } = useLang();
+  const { lang, setLang, t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 

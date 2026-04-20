@@ -1,7 +1,7 @@
 'use client';
 
 import { useCryptoData, fmt } from '@/hooks/useCrypto';
-import { TrendingUp, TrendingDown, Radio } from 'lucide-react';
+import { TrendingUp, TrendingDown } from 'lucide-react';
 import { useLang } from '@/context/LanguageContext';
 
 export default function TickerStrip() {

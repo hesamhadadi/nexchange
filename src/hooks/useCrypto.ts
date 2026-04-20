@@ -65,9 +65,12 @@ export function useCryptoData() {
   }, []);
 
   useEffect(() => {
-    fetchData();
+    const initialFetch = setTimeout(fetchData, 0);
     const interval = setInterval(fetchData, 60000);
-    return () => clearInterval(interval);
+    return () => {
+      clearTimeout(initialFetch);
+      clearInterval(interval);
+    };
   }, [fetchData]);
 
   return { data, loading, error, lastUpdated, refresh: fetchData };
