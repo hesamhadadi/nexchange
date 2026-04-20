@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 import { fmt } from '@/hooks/useCrypto';
 
@@ -27,10 +26,9 @@ export default function PriceChart({ coinId, symbol, name, image, currentPrice, 
   const [range, setRange] = useState<Range>('7');
   const [prices, setPrices] = useState<number[]>([]);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
     // Try CoinGecko, fallback to mock
     const url = `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=${range}`;
     fetch(url)

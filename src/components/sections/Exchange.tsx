@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpDown, Zap, ChevronDown, CheckCircle } from 'lucide-react';
+import { ArrowUpDown, Zap, CheckCircle } from 'lucide-react';
 import { useCryptoData, fmt } from '@/hooks/useCrypto';
 import { useLang } from '@/context/LanguageContext';
 
@@ -13,21 +13,18 @@ export default function Exchange() {
   const [fromCoin, setFromCoin] = useState('bitcoin');
   const [toCoin, setToCoin] = useState('tether');
   const [fromAmount, setFromAmount] = useState('1');
-  const [toAmount, setToAmount] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
 
   const from = data.find(c => c.id === fromCoin);
   const to = data.find(c => c.id === toCoin);
 
-  useEffect(() => {
-    if (from && to && fromAmount) {
-      const amt = parseFloat(fromAmount);
-      if (!isNaN(amt)) {
-        const result = (amt * from.current_price) / to.current_price;
-        setToAmount(result.toFixed(6));
-      }
-    }
-  }, [fromAmount, from, to]);
+  const toAmount = (() => {
+    if (!from || !to || !fromAmount) return '';
+    const amt = parseFloat(fromAmount);
+    if (isNaN(amt)) return '';
+    const result = (amt * from.current_price) / to.current_price;
+    return result.toFixed(6);
+  })();
 
   const handleSwap = () => {
     setFromCoin(toCoin);

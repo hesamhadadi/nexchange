@@ -198,12 +198,11 @@ const LangContext = createContext<LangContextType>({
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('en');
-
-  useEffect(() => {
-    const saved = localStorage.getItem('nexchange-lang') as Lang;
-    if (saved) setLangState(saved);
-  }, []);
+  const [lang, setLangState] = useState<Lang>(() => {
+    if (typeof window === 'undefined') return 'en';
+    const saved = localStorage.getItem('nexchange-lang');
+    return saved === 'fa' || saved === 'en' ? saved : 'en';
+  });
 
   const setLang = (l: Lang) => {
     setLangState(l);
