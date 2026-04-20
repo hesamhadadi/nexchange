@@ -39,14 +39,14 @@ export default function Features() {
   const { t, dir } = useLang();
 
   return (
-    <section id="features" className="scroll-mt-32 sm:scroll-mt-36 py-24 sm:py-32" style={{ background: 'var(--bg-void)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="features" className="scroll-mt-32 sm:scroll-mt-36 section-wrap" style={{ background: 'var(--bg-void)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className={`mb-14 max-w-2xl ${dir === 'rtl' ? 'text-right ms-auto' : 'text-left'}`}
+          className={`mb-10 sm:mb-12 max-w-2xl ${dir === 'rtl' ? 'text-right ms-auto' : 'text-left'}`}
         >
           <h2
             className="text-3xl sm:text-4xl font-bold mb-3"
@@ -59,7 +59,7 @@ export default function Features() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {features.map((f, i) => (
             <motion.div
               key={f.titleKey}
@@ -67,7 +67,7 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`rounded-2xl p-6 card-hover ${dir === 'rtl' ? 'text-right' : 'text-left'}`}
+              className={`rounded-2xl p-5 sm:p-6 card-hover ${dir === 'rtl' ? 'text-right' : 'text-left'}`}
               style={{
                 background: 'var(--bg-card)',
                 border: '1px solid var(--border)',
@@ -98,14 +98,14 @@ export default function Features() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20 divider-gold"
+          className="mt-14 sm:mt-16 divider-gold"
         />
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-8 sm:gap-14"
+          className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-7 sm:gap-12"
         >
           {[
             { label: 'ISO 27001 Certified' },

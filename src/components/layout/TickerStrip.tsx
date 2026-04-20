@@ -17,14 +17,15 @@ export default function TickerStrip() {
   const items = [...data.slice(0, 12), ...data.slice(0, 12)]; // duplicate for seamless loop
 
   return (
-    <div
-      className="relative overflow-hidden h-10 z-40"
-      style={{
-        background: 'var(--bg-deep)',
-        borderBottom: '1px solid var(--border)',
-        marginTop: '72px',
-      }}
-    >
+      <div
+        className="relative overflow-hidden z-40"
+        style={{
+          background: 'var(--bg-deep)',
+          borderBottom: '1px solid var(--border)',
+          marginTop: 'var(--navbar-height)',
+          height: 'var(--ticker-height)',
+        }}
+      >
       {/* Live badge */}
       <div
         className="absolute left-0 top-0 bottom-0 z-10 flex items-center gap-1.5 px-3"
@@ -39,7 +40,7 @@ export default function TickerStrip() {
         </span>
       </div>
 
-      <div className="ticker-track flex items-center h-full gap-8 whitespace-nowrap ps-32">
+      <div className="ticker-track flex items-center h-full gap-8 whitespace-nowrap ps-28 sm:ps-32">
         {items.map((coin, i) => {
           const up = coin.price_change_percentage_24h >= 0;
           return (

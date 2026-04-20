@@ -42,9 +42,9 @@ export default function Exchange() {
   const fee = from ? from.current_price * parseFloat(fromAmount || '0') * 0.001 : 0;
 
   return (
-    <section id="exchange" className="scroll-mt-32 sm:scroll-mt-36 py-24 sm:py-32 mesh-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+    <section id="exchange" className="scroll-mt-32 sm:scroll-mt-36 section-wrap mesh-bg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
           {/* Left: Info */}
           <motion.div
             initial={{ opacity: 0, x: dir === 'rtl' ? 40 : -40 }}
@@ -54,7 +54,7 @@ export default function Exchange() {
             className={dir === 'rtl' ? 'text-right' : 'text-left'}
           >
             <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4"
               style={{ background: 'var(--indigo-dim)', border: '1px solid var(--border-glow)' }}
             >
               <Zap size={12} style={{ color: 'var(--indigo-bright)' }} />
@@ -62,12 +62,12 @@ export default function Exchange() {
             </div>
 
             <h2
-              className="text-3xl sm:text-4xl font-bold mb-4"
+              className="text-3xl sm:text-4xl font-bold mb-3"
               style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)' }}
             >
               {t('exchange.title')}
             </h2>
-            <p className="text-base leading-relaxed mb-8" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-base leading-relaxed mb-7" style={{ color: 'var(--text-secondary)' }}>
               {t('exchange.subtitle')}
             </p>
 
@@ -93,7 +93,7 @@ export default function Exchange() {
             transition={{ duration: 0.7 }}
           >
             <div
-              className="rounded-2xl p-6 glow-indigo"
+              className="rounded-2xl p-5 sm:p-6 glow-indigo"
               style={{
                 background: 'var(--bg-card)',
                 border: '1px solid var(--border-glow)',
@@ -105,7 +105,7 @@ export default function Exchange() {
                   {t('exchange.from')}
                 </label>
                 <div
-                  className="flex items-center gap-3 p-3 rounded-xl"
+                  className="flex items-center gap-3 p-3.5 rounded-xl"
                   style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)' }}
                 >
                   <select
@@ -137,7 +137,7 @@ export default function Exchange() {
               </div>
 
               {/* Swap button */}
-              <div className="flex justify-center my-3">
+              <div className="flex justify-center my-2.5">
                 <button
                   onClick={handleSwap}
                   className="p-2 rounded-xl transition-all hover:rotate-180"
@@ -158,7 +158,7 @@ export default function Exchange() {
                   {t('exchange.to')}
                 </label>
                 <div
-                  className="flex items-center gap-3 p-3 rounded-xl"
+                  className="flex items-center gap-3 p-3.5 rounded-xl"
                   style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)' }}
                 >
                   <select
@@ -184,7 +184,7 @@ export default function Exchange() {
 
               {/* Rate info */}
               <div
-                className="rounded-xl p-3 mb-5 space-y-2"
+                className="rounded-xl p-3.5 mb-5 space-y-2"
                 style={{ background: 'var(--bg-surface)' }}
               >
                 <div className="flex justify-between items-center text-xs">

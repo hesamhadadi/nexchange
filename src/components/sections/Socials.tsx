@@ -62,14 +62,14 @@ export default function Socials() {
   const { t, dir } = useLang();
 
   return (
-    <section id="contact" className="scroll-mt-32 sm:scroll-mt-36 py-24 sm:py-32" style={{ background: 'var(--bg-deep)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="contact" className="scroll-mt-32 sm:scroll-mt-36 section-wrap" style={{ background: 'var(--bg-deep)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-14 text-center"
+          className="mb-10 sm:mb-12 text-center"
         >
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5"
@@ -89,7 +89,7 @@ export default function Socials() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-3 gap-4 sm:gap-5">
           {socials.map((s, i) => (
             <motion.a
               key={s.key}
@@ -100,7 +100,7 @@ export default function Socials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`group block rounded-2xl p-6 card-hover ${dir === 'rtl' ? 'text-right' : 'text-left'}`}
+              className={`group block rounded-2xl p-5 sm:p-6 card-hover ${dir === 'rtl' ? 'text-right' : 'text-left'}`}
               style={{
                 background: 'var(--bg-card)',
                 border: `1px solid ${s.border}`,
@@ -144,7 +144,7 @@ export default function Socials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 rounded-3xl p-6 sm:p-8 lg:p-10 text-center"
+          className="mt-12 sm:mt-14 rounded-3xl p-5 sm:p-7 lg:p-9 text-center"
           style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)' }}
         >
           <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
