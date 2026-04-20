@@ -22,7 +22,7 @@ export default function TickerStrip() {
       style={{
         background: 'var(--bg-deep)',
         borderBottom: '1px solid var(--border)',
-        marginTop: '68px',
+        marginTop: '72px',
       }}
     >
       {/* Live badge */}

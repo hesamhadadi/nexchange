@@ -56,7 +56,7 @@ export default function Markets() {
   };
 
   return (
-    <section id="markets" className="py-20 sm:py-28" style={{ background: 'var(--bg-deep)' }}>
+    <section id="markets" className="scroll-mt-32 sm:scroll-mt-36 py-24 sm:py-32" style={{ background: 'var(--bg-deep)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div

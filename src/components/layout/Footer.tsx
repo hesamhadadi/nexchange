@@ -32,7 +32,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="py-14" style={{ background: 'var(--bg-void)', borderTop: '1px solid var(--border)' }}>
+    <footer className="pt-20 pb-14" style={{ background: 'var(--bg-void)', borderTop: '1px solid var(--border)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className={`grid grid-cols-2 md:grid-cols-4 gap-10 mb-10 ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
           {/* Brand */}
