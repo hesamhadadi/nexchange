@@ -42,7 +42,7 @@ export default function Exchange() {
   const fee = from ? from.current_price * parseFloat(fromAmount || '0') * 0.001 : 0;
 
   return (
-    <section id="exchange" className="py-20 sm:py-28 mesh-bg">
+    <section id="exchange" className="scroll-mt-32 sm:scroll-mt-36 py-24 sm:py-32 mesh-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left: Info */}

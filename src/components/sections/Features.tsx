@@ -39,7 +39,7 @@ export default function Features() {
   const { t, dir } = useLang();
 
   return (
-    <section id="features" className="py-20 sm:py-28" style={{ background: 'var(--bg-void)' }}>
+    <section id="features" className="scroll-mt-32 sm:scroll-mt-36 py-24 sm:py-32" style={{ background: 'var(--bg-void)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -98,7 +98,7 @@ export default function Features() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 divider-gold"
+          className="mt-20 divider-gold"
         />
         <motion.div
           initial={{ opacity: 0, y: 10 }}

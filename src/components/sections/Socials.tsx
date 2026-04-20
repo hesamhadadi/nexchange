@@ -62,7 +62,7 @@ export default function Socials() {
   const { t, dir } = useLang();
 
   return (
-    <section id="contact" className="py-20 sm:py-28" style={{ background: 'var(--bg-deep)' }}>
+    <section id="contact" className="scroll-mt-32 sm:scroll-mt-36 py-24 sm:py-32" style={{ background: 'var(--bg-deep)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -144,7 +144,7 @@ export default function Socials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 rounded-2xl p-8 text-center"
+          className="mt-16 rounded-3xl p-6 sm:p-8 lg:p-10 text-center"
           style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)' }}
         >
           <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>

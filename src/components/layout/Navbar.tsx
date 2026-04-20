@@ -111,7 +111,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[68px] inset-x-0 z-40 glass border-b"
+            className="fixed top-[72px] inset-x-0 z-40 glass border-b"
             style={{ borderColor: 'var(--border)' }}
           >
             <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3">

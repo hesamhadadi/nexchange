@@ -19,7 +19,7 @@ export default function Hero() {
   const eth = data.find(c => c.id === 'ethereum');
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-center mesh-bg overflow-hidden">
+    <section id="home" className="relative min-h-screen scroll-mt-32 sm:scroll-mt-36 flex flex-col justify-center mesh-bg overflow-hidden">
       {/* Decorative blobs */}
       <div
         className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 pointer-events-none"
@@ -39,7 +39,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-16 sm:pb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className={dir === 'rtl' ? 'text-right' : 'text-left'}>
