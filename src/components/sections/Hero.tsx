@@ -19,7 +19,7 @@ export default function Hero() {
   const eth = data.find(c => c.id === 'ethereum');
 
   return (
-    <section id="home" className="relative min-h-screen scroll-mt-32 sm:scroll-mt-36 flex flex-col justify-center mesh-bg overflow-hidden">
+    <section id="home" className="relative min-h-[calc(100vh-44px)] scroll-mt-32 sm:scroll-mt-36 flex flex-col justify-center mesh-bg overflow-hidden">
       {/* Decorative blobs */}
       <div
         className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 pointer-events-none"
@@ -39,8 +39,8 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-16 sm:pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-14 sm:pb-16">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left content */}
           <div className={dir === 'rtl' ? 'text-right' : 'text-left'}>
             {/* Badge */}
@@ -48,7 +48,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5"
               style={{
                 background: 'var(--gold-dim)',
                 border: '1px solid rgba(201,168,76,0.3)',
@@ -65,7 +65,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-5"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               <span style={{ color: 'var(--text-primary)' }}>{t('hero.title1')}</span>
@@ -80,7 +80,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg leading-relaxed mb-8 max-w-lg"
+              className="text-base sm:text-lg leading-relaxed mb-7 max-w-xl"
               style={{ color: 'var(--text-secondary)' }}
             >
               {t('hero.subtitle')}
@@ -91,7 +91,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className={`flex flex-wrap gap-3 mb-12 ${dir === 'rtl' ? 'justify-end' : 'justify-start'}`}
+              className={`flex flex-wrap gap-3 mb-10 ${dir === 'rtl' ? 'justify-end' : 'justify-start'}`}
             >
               <a
                 href="#exchange"
@@ -113,7 +113,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6"
             >
               {stats.map((s) => (
                 <div key={s.key} className={dir === 'rtl' ? 'text-right' : 'text-left'}>
@@ -136,7 +136,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="hidden lg:block relative h-[480px]"
+            className="hidden lg:block relative h-[460px] xl:h-[500px]"
           >
             {/* Main BTC card */}
             <div
@@ -235,7 +235,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
+      <div className="absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}

@@ -56,20 +56,20 @@ export default function Markets() {
   };
 
   return (
-    <section id="markets" className="scroll-mt-32 sm:scroll-mt-36 py-24 sm:py-32" style={{ background: 'var(--bg-deep)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="markets" className="scroll-mt-32 sm:scroll-mt-36 section-wrap" style={{ background: 'var(--bg-deep)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className={`mb-10 ${dir === 'rtl' ? 'text-right' : 'text-left'}`}
+          className={`mb-8 sm:mb-10 ${dir === 'rtl' ? 'text-right' : 'text-left'}`}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-2" style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)' }}>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)' }}>
             {t('markets.title')}
           </h2>
-          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-sm sm:text-base" style={{ color: 'var(--text-secondary)' }}>
             {t('markets.subtitle')}
             {lastUpdated && (
               <span className="ms-2" style={{ color: 'var(--text-muted)' }}>
@@ -80,7 +80,7 @@ export default function Markets() {
         </motion.div>
 
         {/* Controls */}
-        <div className={`flex flex-wrap gap-3 mb-6 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
+        <div className={`flex flex-wrap gap-3 mb-5 sm:mb-6 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
           {/* Search */}
           <div className="relative flex-1 min-w-[200px]">
             <Search
@@ -96,7 +96,7 @@ export default function Markets() {
               placeholder={t('markets.search')}
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full h-9 rounded-lg text-sm outline-none"
+                className="w-full h-10 rounded-xl text-sm outline-none"
               style={{
                 background: 'var(--bg-card)',
                 border: '1px solid var(--border)',
@@ -108,12 +108,12 @@ export default function Markets() {
           </div>
 
           {/* Filter tabs */}
-          <div className="flex rounded-lg overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+          <div className="flex rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
             {(['all', 'gainers', 'losers'] as Filter[]).map(f => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className="px-3 py-2 text-xs font-medium transition-all"
+                className="px-3.5 py-2.5 text-xs font-medium transition-all"
                 style={{
                   background: filter === f ? 'var(--indigo-dim)' : 'var(--bg-card)',
                   color: filter === f ? 'var(--indigo-bright)' : 'var(--text-muted)',
@@ -127,7 +127,7 @@ export default function Markets() {
           {/* Refresh */}
           <button
             onClick={refresh}
-            className="p-2 rounded-lg transition-all"
+            className="p-2.5 rounded-xl transition-all"
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', color: 'var(--text-muted)' }}
           >
             <RefreshCw size={14} />
@@ -140,12 +140,12 @@ export default function Markets() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-2xl overflow-hidden"
+          className="rounded-2xl overflow-hidden section-card"
           style={{ border: '1px solid var(--border)' }}
         >
           {/* Desktop header */}
           <div
-            className="hidden md:grid grid-cols-[40px_2fr_1.5fr_1fr_1.5fr_1.5fr_80px_100px] gap-4 px-5 py-3 text-xs font-medium"
+            className="hidden md:grid grid-cols-[40px_2fr_1.5fr_1fr_1.5fr_1.5fr_80px_100px] gap-4 px-5 py-3.5 text-xs font-medium"
             style={{
               background: 'var(--bg-surface)',
               color: 'var(--text-muted)',
