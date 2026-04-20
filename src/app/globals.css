@@ -74,6 +74,11 @@ body{background-color:var(--bg-void);color:var(--text-primary);font-family:var(-
 
 .glass{background:rgba(22,22,40,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
 .divider-gold{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.25;}
+.section-wrap{padding-block:5rem;}
+@media (min-width:640px){.section-wrap{padding-block:6rem;}}
+.content-wrap{max-width:80rem;margin-inline:auto;padding-inline:1rem;}
+@media (min-width:640px){.content-wrap{padding-inline:1.5rem;}}
+.section-card{background:var(--bg-card);border:1px solid var(--border);border-radius:1.5rem;}
 
 @keyframes growBar{from{transform:scaleY(0);}to{transform:scaleY(1);}}
 .bar-animate{animation:growBar 0.8s cubic-bezier(0.4,0,0.2,1) forwards;transform-origin:bottom;}

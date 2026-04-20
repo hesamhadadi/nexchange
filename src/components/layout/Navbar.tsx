@@ -32,11 +32,11 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'glass border-b border-white/5 py-3'
-            : 'py-5'
+            ? 'glass border-b border-white/5 py-2.5'
+            : 'py-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2.5 group">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center glow-gold">
@@ -52,7 +52,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {links.map(l => (
               <a
                 key={l.key}
@@ -111,10 +111,10 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[72px] inset-x-0 z-40 glass border-b"
+            className="fixed top-[68px] inset-x-0 z-40 glass border-b"
             style={{ borderColor: 'var(--border)' }}
           >
-            <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-3">
               {links.map(l => (
                 <a
                   key={l.key}

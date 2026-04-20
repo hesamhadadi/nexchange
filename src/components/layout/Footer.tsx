@@ -32,9 +32,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="pt-20 pb-14" style={{ background: 'var(--bg-void)', borderTop: '1px solid var(--border)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className={`grid grid-cols-2 md:grid-cols-4 gap-10 mb-10 ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
+    <footer className="pt-16 sm:pt-20 pb-10 sm:pb-12" style={{ background: 'var(--bg-void)', borderTop: '1px solid var(--border)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className={`flex items-center gap-2.5 mb-4 ${dir === 'rtl' ? 'flex-row-reverse justify-end' : ''}`}>
