@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --bg-void: #080810;
+  --bg-deep: #0d0d1a;
+  --bg-surface: #111122;
+  --bg-card: #161628;
+  --bg-elevated: #1c1c35;
+  --border: rgba(255,255,255,0.06);
+  --border-glow: rgba(99,102,241,0.3);
+  --gold: #c9a84c;
+  --gold-light: #e4c97e;
+  --gold-dim: rgba(201,168,76,0.15);
+  --indigo: #6366f1;
+  --indigo-bright: #818cf8;
+  --indigo-dim: rgba(99,102,241,0.12);
+  --green: #10b981;
+  --green-dim: rgba(16,185,129,0.15);
+  --red: #f43f5e;
+  --red-dim: rgba(244,63,94,0.15);
+  --text-primary: #f0f0ff;
+  --text-secondary: rgba(240,240,255,0.55);
+  --text-muted: rgba(240,240,255,0.3);
+  --font-display: 'Playfair Display',Georgia,serif;
+  --font-body: 'DM Sans',sans-serif;
+  --font-mono: 'Space Mono',monospace;
+}
+[dir="rtl"] { font-family:'Vazirmatn',var(--font-body); }
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:var(--bg-void);color:var(--text-primary);font-family:var(--font-body);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg-void);}
+::-webkit-scrollbar-thumb{background:var(--indigo);border-radius:2px;}
+::selection{background:var(--gold-dim);color:var(--gold-light);}
+
+.glow-gold{box-shadow:0 0 20px rgba(201,168,76,0.2),0 0 60px rgba(201,168,76,0.05);}
+.glow-indigo{box-shadow:0 0 20px rgba(99,102,241,0.25),0 0 60px rgba(99,102,241,0.05);}
+.text-glow-gold{text-shadow:0 0 20px rgba(201,168,76,0.5);}
+
+.mesh-bg{
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%,rgba(99,102,241,0.08) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%,rgba(201,168,76,0.06) 0%,transparent 60%),
+    radial-gradient(ellipse 100% 80% at 50% 50%,rgba(16,185,129,0.03) 0%,transparent 70%),
+    var(--bg-void);
+}
+
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.ticker-track{animation:ticker 35s linear infinite;}
+.ticker-track:hover{animation-play-state:paused;}
+
+@keyframes shimmer{0%{background-position:-200% 0;}100%{background-position:200% 0;}}
+.shimmer{background:linear-gradient(90deg,var(--bg-card) 25%,var(--bg-elevated) 50%,var(--bg-card) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;}
+
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+.pulse-dot{animation:pulse-dot 2s ease-in-out infinite;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.fade-up{animation:fadeUp 0.5s ease-out forwards;}
+
+.card-hover{transition:transform 0.3s cubic-bezier(0.4,0,0.2,1),box-shadow 0.3s ease,border-color 0.3s ease;}
+.card-hover:hover{transform:translateY(-3px);border-color:rgba(201,168,76,0.25)!important;box-shadow:0 12px 40px rgba(0,0,0,0.5),0 0 0 1px rgba(201,168,76,0.1);}
+
+.btn-gold{background:linear-gradient(135deg,var(--gold) 0%,#a8892d 100%);color:#000;font-weight:600;letter-spacing:0.03em;transition:all 0.2s ease;position:relative;overflow:hidden;}
+.btn-gold:hover{box-shadow:0 0 20px rgba(201,168,76,0.4);}
+.btn-gold:active{transform:scale(0.98);}
+
+.btn-outline{border:1px solid var(--border-glow);background:var(--indigo-dim);color:var(--indigo-bright);transition:all 0.2s ease;}
+.btn-outline:hover{background:rgba(99,102,241,0.2);border-color:var(--indigo);}
+
+.glass{background:rgba(22,22,40,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+.divider-gold{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.25;}
+
+@keyframes growBar{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+.bar-animate{animation:growBar 0.8s cubic-bezier(0.4,0,0.2,1) forwards;transform-origin:bottom;}
+
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.float-anim{animation:float 4s ease-in-out infinite;}
