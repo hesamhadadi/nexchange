@@ -22,7 +22,7 @@ export default function Hero() {
     <section
       id="home"
       className="relative scroll-mt-32 sm:scroll-mt-36 flex flex-col justify-center mesh-bg overflow-hidden"
-      style={{ minHeight: 'calc(100vh - var(--ticker-height))' }}
+      style={{ minHeight: 'calc(100vh - var(--navbar-height) - var(--ticker-height))' }}
     >
       {/* Decorative blobs */}
       <div
@@ -43,7 +43,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-14 sm:pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-14">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left content */}
           <div className={dir === 'rtl' ? 'text-right' : 'text-left'}>
